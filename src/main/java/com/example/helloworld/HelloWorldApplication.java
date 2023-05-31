@@ -27,3 +27,11 @@ public class HelloWorldApplication {
 //com.amazonaws.eu-west-1.logs
 //com.amazonaws.eu-west-1.secretsmanager
 //com.amazonaws.eu-west-1.ssm  not mandatory
+
+
+// https://www.youtube.com/watch?v=aa3gGwJpCro
+// https://www.youtube.com/watch?v=HQTsCXLvWj8
+// https://www.youtube.com/watch?v=yCAlJv6zfn4
+
+
+//Codebuild manageimage Ubuntu Standard aws/codebuild/standard:7.0 always use the latest Linux checkPrivileged
