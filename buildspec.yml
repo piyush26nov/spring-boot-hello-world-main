@@ -1,0 +1,30 @@
+version: 0.2
+
+
+phases:
+  pre_build:
+    commands:
+      - mvn clean install
+      - echo Logging in to Amazon ECR...
+      - aws --version
+      - aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 766091791843.dkr.ecr.eu-west-1.amazonaws.com
+      - REPOSITORY_URI=766091791843.dkr.ecr.eu-west-1.amazonaws.com/springbootdocker
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build -t springbootdocker:latest .
+      - docker tag springbootdocker:latest 766091791843.dkr.ecr.eu-west-1.amazonaws.com/springbootdocker:latest
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker images...
+      - docker push 766091791843.dkr.ecr.eu-west-1.amazonaws.com/springbootdocker:latest
+      - echo Writing image definitions file...
+      - printf '[{"name":"helloWorld","imageUri":"%s"}]' 766091791843.dkr.ecr.eu-west-1.amazonaws.com/springbootdocker:latest > imagedefinitions.json
+      - cat imagedefinitions.json
+artifacts:
+  files:
+   - imagedefinitions.json
+#   - target/spring-boot-docker.jar
+
