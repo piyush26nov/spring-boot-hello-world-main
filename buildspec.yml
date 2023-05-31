@@ -7,7 +7,7 @@ phases:
       - mvn clean install
       - echo Logging in to Amazon ECR...
       - aws --version
-      - $(aws ecr get-login-password --region eu-west-1)
+      - aws ecr get-login-password --region eu-west-1
       - REPOSITORY_URI=766091791843.dkr.ecr.eu-west-1.amazonaws.com/springbootdocker
   build:
     commands:
