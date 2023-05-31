@@ -21,10 +21,10 @@ phases:
       - echo Pushing the Docker images...
       - docker push 766091791843.dkr.ecr.eu-west-1.amazonaws.com/springbootdocker:latest
       - echo Writing image definitions file...
-      - printf '[{"name":"spring-boot-docker","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"helloWorld","imageUri":"%s"}]' 766091791843.dkr.ecr.eu-west-1.amazonaws.com/springbootdocker:latest > imagedefinitions.json
       - cat imagedefinitions.json
 artifacts:
   files:
    - imagedefinitions.json
-   - target/spring-boot-docker.jar
+#   - target/spring-boot-docker.jar
 
