@@ -54,3 +54,8 @@ public class HelloWorldApplication {
 //Codebuild manageimage Ubuntu Standard aws/codebuild/standard:7.0 always use the latest Linux checkPrivileged
 
 //https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-vs-rest.html
+
+
+//https://www.youtube.com/watch?v=00qQaoC-5ig    
+// https://www.youtube.com/watch?v=yWc1I56-UII
+//https://www.youtube.com/watch?v=aHuCeLn72Lg
