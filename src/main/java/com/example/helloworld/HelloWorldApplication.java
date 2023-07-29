@@ -22,6 +22,7 @@ public class HelloWorldApplication {
 
 // aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 766091791843.dkr.ecr.eu-west-1.amazonaws.com
 
+//ecr repo name-springbootdocker
 
 //com.amazonaws.eu-west-1.ecr.dkr
 //com.amazonaws.eu-west-1.ecr.api
@@ -48,7 +49,9 @@ public class HelloWorldApplication {
 // create alb n tg
 //vpc endpoint creation in pvt subnet and pvt rt and sg source is vpc range
 //Enabling private DNS requires both enableDnsSupport and enableDnsHostnames VPC attributes set to true for vpc-059db27d08cb7279c
-
+// total 3 sg -1) alb with in all Ips n port 80 and out all IP/port -2)service sg allowing in on alb and out all IP/port -3) VPC sg
+//FROM openjdk:8
+//FROM 766091791843.dkr.ecr.eu-west-1.amazonaws.com/openjdk:11
 
 
 //Codebuild manageimage Ubuntu Standard aws/codebuild/standard:7.0 always use the latest Linux checkPrivileged
